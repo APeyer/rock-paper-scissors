@@ -9,24 +9,24 @@
     
 </body>
 <script>
-    const playerInput = prompt("Enter Rock, Paper or Scissors");
-    const playerSelection = playerInput.toLowerCase();
 
-    const getComputerChoice = function() {
-        let computerSelection = Math.floor(Math.random() * 3);
-        if (computerSelection === 0) {
-            return "rock";
-        } else if (computerSelection === 1) {
-            return "paper";
-        } else {
-            return "scissors";
+    function playRound() {
+
+        const getComputerChoice = function() {
+            let computerSelection = Math.floor(Math.random() * 3);
+            if (computerSelection === 0) {
+                return "rock";
+            } else if (computerSelection === 1) {
+                return "paper";
+            } else {
+                return "scissors";
+            }
         }
-    }
-    computerSelection = getComputerChoice();
+        computerSelection = getComputerChoice();
 
-    console.log(playRound(playerSelection, computerSelection));
-
-    function playRound(playerSelection, computerSelection) {
+        const playerInput = prompt("Enter Rock, Paper or Scissors");
+        const playerSelection = playerInput.toLowerCase();
+        
         if (playerSelection === "rock" && computerSelection === "paper") {
             return ("You loose, Paper win over Rock");
         } else if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -49,6 +49,12 @@
             return ("Enter Rock, Paper or Scissors");
         }
     }
+
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());
     
     /*
     function winner(){
