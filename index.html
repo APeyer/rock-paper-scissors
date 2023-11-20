@@ -6,9 +6,19 @@
     <title>Rock paper scissors game</title>
 </head>
 <body>
-    
+    <button id="rock">rock</button>
+    <button id="paper">paper</button>
+    <button id="scissors">scissors</button>
 </body>
 <script>
+    const rock = document.querySelector('#rock');
+    const paper = document.querySelector('#paper');
+    const scissors = document.querySelector('#scissors');
+
+    rock.addEventListener('click', () => {playRound (playerSelection = "rock")});
+    paper.addEventListener('click', () => {playRound (playerSelection = "paper")});
+    scissors.addEventListener('click', () => {playRound (playerSelection = "scissors")});
+    
 
     function playRound() {
 
@@ -22,39 +32,31 @@
                 return "scissors";
             }
         }
+        
         computerSelection = getComputerChoice();
-
-        const playerInput = prompt("Enter Rock, Paper or Scissors");
-        const playerSelection = playerInput.toLowerCase();
         
         if (playerSelection === "rock" && computerSelection === "paper") {
-            return ("You loose, Paper win over Rock");
+            return console.log("You loose, Paper win over Rock");
         } else if (playerSelection === "rock" && computerSelection === "scissors") {
-            return ("You win, Rock win over Scissors");
+            return console.log("You win, Rock win over Scissors");
         } else if (playerSelection === "rock" && computerSelection === "rock") {
-            return ("Rock over Rock, try again")
+            return console.log("Rock over Rock, try again")
         } else if (playerSelection === "paper" && computerSelection === "paper") {
-            return ("Paper over Paper, try again")
+            return console.log("Paper over Paper, try again")
         } else if (playerSelection === "paper" && computerSelection === "scissors") {
-            return ("You loose, Scissors win over Paper")
+            return console.log("You loose, Scissors win over Paper")
         } else if (playerSelection === "paper" && computerSelection === "rock") {
-            return ("You win, Paper win over Rock")
+            return console.log("You win, Paper win over Rock")
         } else if (playerSelection === "scissors" && computerSelection === "paper") {
-            return ("You win, Scissors win over Paper")
+            return console.log("You win, Scissors win over Paper")
         } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-            return ("Scissors over Scissors, try again")
+            return console.log("Scissors over Scissors, try again")
         } else if (playerSelection === "scissors" && computerSelection === "rock") {
-            return ("You loose, Rock win over Scissors")
+            return console.log("You loose, Rock win over Scissors")
         } else if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors"){
-            return ("Enter Rock, Paper or Scissors");
+            return console.log("Enter Rock, Paper or Scissors");
         }
     }
-
-    console.log(playRound());
-    console.log(playRound());
-    console.log(playRound());
-    console.log(playRound());
-    console.log(playRound());
     
     /*
     function winner(){
