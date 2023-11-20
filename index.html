@@ -11,16 +11,13 @@
     <button id="scissors">scissors</button>
 </body>
 <script>
-    const rock = document.querySelector('#rock');
-    const paper = document.querySelector('#paper');
-    const scissors = document.querySelector('#scissors');
-
-    rock.addEventListener('click', () => {playRound (playerSelection = "rock")});
-    paper.addEventListener('click', () => {playRound (playerSelection = "paper")});
-    scissors.addEventListener('click', () => {playRound (playerSelection = "scissors")});
+    const buttons = document.querySelectorAll('button');
     
+    buttons.forEach((button) => {
+        button.addEventListener('click', event => playRound(event.target.id));
+    });
 
-    function playRound() {
+    function playRound(playerSelection) {
 
         const getComputerChoice = function() {
             let computerSelection = Math.floor(Math.random() * 3);
